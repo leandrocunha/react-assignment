@@ -3,16 +3,32 @@ import cors from 'cors';
 import express from 'express';
 
 const app = express();
-const apiURL = 'http://api.football-data.org/v2';
+const api = axios.create({
+    baseURL: 'http://api.football-data.org/v2',
+    headers: { 'X-Auth-Token': '161a83f0655b4cb983842ebd4a8430de' },
+});
 
 app.use(cors());
 
 app.get('/api/areas', (req, res) => {
-    axios.get(`${apiURL}/areas`).then(r => res.json({ ...r.data }));
+    api.get('/areas').then(r => res.json({ ...r.data }));
 });
 
 app.get('/api/competitions', (req, res) => {
-    axios.get(`${apiURL}/competitions`).then(r => res.json({ ...r.data }));
+    const { query } = req;
+    api.get(`/competitions?areas=${query.areas}`).then(r => res.json({ ...r.data }));
+});
+
+app.get('/api/competitions/:competitionId/matches', (req, res) => {
+    const { params } = req;
+    api.get(`/competitions/${params.competitionId}/matches`).then(r => res.json({ ...r.data }));
+});
+
+app.get('/api/competitions/:competitionId/standings', (req, res) => {
+    const { params } = req;
+    api.get(`/competitions/${params.competitionId}/standings`)
+        .then(r => res.json({ ...r.data }))
+        .catch(err => res.json({ ...err.data }));
 });
 
 app.get('*', (req, res) => {
