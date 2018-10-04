@@ -6,6 +6,11 @@ const app = express();
 const apiURL = 'http://api.football-data.org/v2';
 
 app.use(cors());
+
+app.get('/api/areas', (req, res) => {
+    axios.get(`${apiURL}/areas`).then(r => res.json({ ...r.data }));
+});
+
 app.get('/api/competitions', (req, res) => {
     axios.get(`${apiURL}/competitions`).then(r => res.json({ ...r.data }));
 });
