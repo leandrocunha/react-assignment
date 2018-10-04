@@ -1,0 +1,15 @@
+{
+  "extends": "@endouble.com/eslint-config-endouble/react",
+  "globals": {
+    "document": true,
+    "fetch": true,
+    "window": true,
+    "URL": true
+  },
+  "rules": {
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }
+    ]
+  }
+}
