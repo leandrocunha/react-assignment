@@ -33,16 +33,21 @@ class App extends Component {
         const { areas, area, loading, matches, standings } = this.state;
         return (
             <div className="App" style={{ display: 'flex' }}>
-                <div>
+                <div className="Sidebar">
                     {loading ? (
                         <p>loading...</p>
                     ) : (
                         <Fragment>
-                            {areas.map(a => (
-                                <li key={a.countryCode}>
-                                    <button onClick={() => this.competitions(a.id)}>{a.name}</button>
-                                </li>
-                            ))}
+                            <input className="Sidebar__Search" placeholder="Searh an area..." type="text" />
+                            <ul className="Sidebar__AreasList">
+                                {areas.map(a => (
+                                    <li className="Sidebar__AreasList__Area" key={a.countryCode}>
+                                        <button className="Button" onClick={() => this.competitions(a.id)}>
+                                            {a.name}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
                         </Fragment>
                     )}
                 </div>

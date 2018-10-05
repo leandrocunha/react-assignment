@@ -1,0 +1,42 @@
+.Sidebar {
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+
+  &__Search {
+    border: none;
+    border-radius: 80px;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 10px 20px;
+  }
+
+  &__AreasList {
+    list-style: none;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0;
+
+    &__Area {
+      .Button {
+        background-color: transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        padding: 5px 8px;
+        text-align: left;
+        transition: all 0.3s ease;
+        width: 100%;
+
+        &:hover {
+          background-color: rgba($black, 0.05);
+        }
+      }
+    }
+  }
+}

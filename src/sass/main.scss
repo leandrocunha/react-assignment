@@ -1,0 +1,11 @@
+@import 'fonts';
+@import 'colors';
+@import 'normalize';
+
+body {
+  font-family: $Arvo;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@import 'sidebar';
