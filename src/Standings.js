@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const Standings = ({ competition }) => (
-    <div>
-        <table>
+    <div className="Standings">
+        <table className="Standings__Table">
             <thead>
                 <tr>
                     <th>Position</th>
-                    <th>Team</th>
+                    <th>P</th>
                     <th>Played Games</th>
                     <th>Goal For</th>
                     <th>Goal Against</th>
@@ -18,8 +18,10 @@ const Standings = ({ competition }) => (
             <tbody>
                 {competition.standings.map(standing => (
                     <tr key={standing.position}>
-                        <td>{standing.position}</td>
-                        <td>{standing.team.name}</td>
+                        <td>
+                            {standing.position}) {standing.team.name}
+                        </td>
+                        <td>{standing.points}</td>
                         <td>{standing.playedGames}</td>
                         <td>{standing.goalsFor}</td>
                         <td>{standing.goalsAgainst}</td>

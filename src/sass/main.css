@@ -337,3 +337,27 @@ body {
       width: 100%; }
       .Sidebar__List__Item .Button:hover {
         background-color: rgba(0, 0, 0, 0.05); }
+
+.Standings {
+  flex: 1;
+  padding: 20px; }
+  .Standings__Table {
+    border-collapse: collapse;
+    font-size: 14px; }
+    .Standings__Table thead tr th {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 12px;
+      font-weight: 300;
+      padding: 5px;
+      text-align: center;
+      text-transform: uppercase; }
+    .Standings__Table tbody tr {
+      height: 55px; }
+      .Standings__Table tbody tr td {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        line-height: 14px;
+        padding: 0 15px;
+        text-align: center; }
+        .Standings__Table tbody tr td:first-of-type {
+          text-align: left; }

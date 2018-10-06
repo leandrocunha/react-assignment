@@ -1,0 +1,40 @@
+.Standings {
+  flex: 1;
+  padding: 20px;
+
+  &__Table {
+    border-collapse: collapse;
+    font-size: 14px;
+
+    thead {
+      tr {
+        th {
+          border-bottom: 1px solid rgba($black, 0.2);
+          border-top: 1px solid rgba($black, 0.1);
+          font-size: 12px;
+          font-weight: 300;
+          padding: 5px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 55px;
+
+        td {
+          border-bottom: 1px solid rgba($black, 0.2);
+          line-height: 14px;
+          padding: 0 15px;
+          text-align: center;
+
+          &:first-of-type {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
