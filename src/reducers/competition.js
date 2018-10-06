@@ -1,12 +1,15 @@
-const intialstate = { competition: {}, loading: false };
+const intialstate = { list: [], loading: false, standings: [] };
 
 const competition = (state = intialstate, { data, type }) => {
     switch (type) {
         case 'COMPETITION/GET':
-            return { loading: false, ...data };
+            return { ...state, loading: false, list: data.competitions };
+
+        case 'COMPETITION/STANDINGS':
+            return { ...state, standings: data.standings[0].table };
 
         default:
-            return state;
+            return intialstate;
     }
 };
 

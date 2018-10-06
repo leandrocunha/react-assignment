@@ -311,6 +311,8 @@ body {
   overflow: hidden;
   padding: 10px;
   width: 265px; }
+  .Sidebar--competitions {
+    background-color: #ff922d; }
   .Sidebar__Search {
     border: none;
     border-radius: 80px;
@@ -319,12 +321,12 @@ body {
     box-sizing: border-box;
     margin: 30px auto;
     padding: 10px 20px; }
-  .Sidebar__AreasList {
+  .Sidebar__List {
     list-style: none;
     margin: 0;
     overflow-y: scroll;
     padding: 0; }
-    .Sidebar__AreasList__Area .Button {
+    .Sidebar__List__Item .Button {
       background-color: transparent;
       border: none;
       color: #fff;
@@ -333,5 +335,5 @@ body {
       text-align: left;
       transition: all 0.3s ease;
       width: 100%; }
-      .Sidebar__AreasList__Area .Button:hover {
+      .Sidebar__List__Item .Button:hover {
         background-color: rgba(0, 0, 0, 0.05); }

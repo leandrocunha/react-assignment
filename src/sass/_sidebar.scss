@@ -7,6 +7,10 @@
   padding: 10px;
   width: 265px;
 
+  &--competitions {
+    background-color: $deep_saffron;
+  }
+
   &__Search {
     border: none;
     border-radius: 80px;
@@ -17,13 +21,13 @@
     padding: 10px 20px;
   }
 
-  &__AreasList {
+  &__List {
     list-style: none;
     margin: 0;
     overflow-y: scroll;
     padding: 0;
 
-    &__Area {
+    &__Item {
       .Button {
         background-color: transparent;
         border: none;

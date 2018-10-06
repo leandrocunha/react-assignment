@@ -1,3 +1,4 @@
-const get = competitions => ({ type: 'COMPETITIONS/GET', data: { ...competitions } });
+const get = data => ({ type: 'COMPETITION/GET', data });
+const standings = data => ({ type: 'COMPETITION/STANDINGS', data });
 
-export default get;
+export { get, standings };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actionAreas from './actions/areas';
-import get from './actions/competitions';
+import * as actionCompetitions from './actions/competitions';
 import * as api from './connections';
 
 class Sidebar extends Component {
@@ -24,7 +24,7 @@ class Sidebar extends Component {
 
     getCompetitions(areaId) {
         const { dispatch } = this.props;
-        api.competitions(areaId).then(res => dispatch(get(res)));
+        api.competitions(areaId).then(res => dispatch(actionCompetitions.get(res)));
     }
 
     render() {
@@ -33,9 +33,9 @@ class Sidebar extends Component {
         return (
             <div className="Sidebar">
                 <input className="Sidebar__Search" onKeyUp={this.onType} placeholder="Searh an area..." type="text" />
-                <ul className="Sidebar__AreasList">
+                <ul className="Sidebar__List">
                     {result.map(a => (
-                        <li className="Sidebar__AreasList__Area" key={a.countryCode}>
+                        <li className="Sidebar__List__Item" key={a.countryCode}>
                             <button className="Button" onClick={() => this.getCompetitions(a.id)}>
                                 {a.name}
                             </button>
