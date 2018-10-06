@@ -1,4 +1,4 @@
-const intialstate = { loading: true };
+const intialstate = { list: [], loading: true, searcheable: [] };
 
 const search = (str, arr) => {
     const newArr = [];
@@ -15,13 +15,10 @@ const search = (str, arr) => {
 const area = (state = intialstate, { data, type }) => {
     switch (type) {
         case 'AREA/GET':
-            return { loading: false, searcheable: data.areas, ...data };
+            return { ...intialstate, list: data.areas, loading: false, searcheable: data.areas };
 
         case 'AREA/SEARCH':
-            return {
-                ...state,
-                searcheable: search(data, state.areas),
-            };
+            return { ...state, searcheable: search(data, state.list) };
 
         default:
             return state;

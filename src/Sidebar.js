@@ -1,29 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { search } from './actions/areas';
+import * as actionAreas from './actions/areas';
+import get from './actions/competitions';
+import * as api from './connections';
 
 class Sidebar extends Component {
     constructor(props) {
         super(props);
+        this.getCompetitions = this.getCompetitions.bind(this);
         this.onType = this.onType.bind(this);
+    }
+
+    componentDidMount() {
+        const { dispatch } = this.props;
+        api.areas().then(res => dispatch(actionAreas.get(res)));
     }
 
     onType(e) {
         const { dispatch } = this.props;
-        dispatch(search(e.target.value));
+        dispatch(actionAreas.search(e.target.value));
+    }
+
+    getCompetitions(areaId) {
+        const { dispatch } = this.props;
+        api.competitions(areaId).then(res => dispatch(get(res)));
     }
 
     render() {
-        const { areas, searcheable } = this.props;
-        const results = searcheable.length ? searcheable : areas;
+        const { area } = this.props;
+        const result = area.searcheable.length ? area.searcheable : area.list;
         return (
             <div className="Sidebar">
                 <input className="Sidebar__Search" onKeyUp={this.onType} placeholder="Searh an area..." type="text" />
                 <ul className="Sidebar__AreasList">
-                    {results.map(a => (
+                    {result.map(a => (
                         <li className="Sidebar__AreasList__Area" key={a.countryCode}>
-                            <button className="Button" onClick={() => this.competitions(a.id)}>
+                            <button className="Button" onClick={() => this.getCompetitions(a.id)}>
                                 {a.name}
                             </button>
                         </li>
@@ -34,14 +47,9 @@ class Sidebar extends Component {
     }
 }
 
-Sidebar.defaultProps = {
-    areas: [],
-    searcheable: [],
-};
 Sidebar.propTypes = {
-    areas: PropTypes.instanceOf(Array),
+    area: PropTypes.instanceOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
-    searcheable: PropTypes.instanceOf(Array),
 };
 
 const mapStateToProps = state => state;

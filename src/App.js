@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { get } from './actions/areas';
 import * as api from './connections';
 import Sidebar from './Sidebar';
 
@@ -13,18 +12,7 @@ class App extends Component {
             standings: { loading: true },
             matches: { loading: true },
         };
-        this.competitions = this.competitions.bind(this);
         this.standings = this.standings.bind(this);
-    }
-
-    componentDidMount() {
-        const { dispatch } = this.props;
-
-        api.areas().then(res => dispatch(get(res)));
-    }
-
-    competitions(areaId) {
-        api.competitions(areaId).then(res => this.setState({ area: { loading: false, ...res } }));
     }
 
     standings(competitionId) {
@@ -100,14 +88,8 @@ class App extends Component {
     }
 }
 
-App.defaultProps = {
-    areas: [],
-};
-
 App.propTypes = {
-    areas: PropTypes.instanceOf(Array),
     dispatch: PropTypes.func.isRequired,
-    loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => state;
