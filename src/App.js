@@ -1,11 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { get } from './actions/areas';
 import * as api from './connections';
+import Sidebar from './Sidebar';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,
             area: { loading: true },
             standings: { loading: true },
             matches: { loading: true },
@@ -15,7 +18,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        api.areas().then(res => this.setState({ loading: false, ...res }));
+        const { dispatch } = this.props;
+
+        api.areas().then(res => dispatch(get(res)));
     }
 
     competitions(areaId) {
@@ -30,27 +35,10 @@ class App extends Component {
     }
 
     render() {
-        const { areas, area, loading, matches, standings } = this.state;
+        const { area, matches, standings } = this.state;
         return (
             <div className="App" style={{ display: 'flex' }}>
-                <div className="Sidebar">
-                    {loading ? (
-                        <p>loading...</p>
-                    ) : (
-                        <Fragment>
-                            <input className="Sidebar__Search" placeholder="Searh an area..." type="text" />
-                            <ul className="Sidebar__AreasList">
-                                {areas.map(a => (
-                                    <li className="Sidebar__AreasList__Area" key={a.countryCode}>
-                                        <button className="Button" onClick={() => this.competitions(a.id)}>
-                                            {a.name}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        </Fragment>
-                    )}
-                </div>
+                <Sidebar {...this.props} />
                 <div>
                     {area.loading ? (
                         <p>loading...</p>
@@ -112,4 +100,16 @@ class App extends Component {
     }
 }
 
-export default App;
+App.defaultProps = {
+    areas: [],
+};
+
+App.propTypes = {
+    areas: PropTypes.instanceOf(Array),
+    dispatch: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(App);
