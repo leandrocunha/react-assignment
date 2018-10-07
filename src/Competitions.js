@@ -19,20 +19,22 @@ class Competitions extends Component {
         const { competition } = this.props;
 
         return (
-            <div className="Sidebar Sidebar--competitions">
-                {competition.loading ? (
-                    <p>loading...</p>
-                ) : (
-                    <ul className="Sidebar__List">
-                        {competition.list.map(c => (
-                            <li className="Sidebar__List__Item" key={c.id}>
-                                <button className="Button" onClick={() => this.standings(c.id)}>
-                                    {c.name}
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+            <div className="Competitions">
+                <div className="Competitions__Container">
+                    {competition.loading ? (
+                        <p>loading...</p>
+                    ) : (
+                        <ul className="Competitions__Container__List">
+                            {competition.list.map(c => (
+                                <li className="Competitions__Container__List__Item" key={c.id}>
+                                    <button className="Button Button--link" onClick={() => this.standings(c.id)}>
+                                        {c.name}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
             </div>
         );
     }

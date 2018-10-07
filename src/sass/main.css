@@ -364,6 +364,28 @@ body {
           .MainNav__Container__QuickLinks__List__Item .Button {
             color: #fff; }
 
+.Competitions {
+  background-color: #ff922d; }
+  .Competitions__Container {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px; }
+    .Competitions__Container__List {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 15px 0;
+      width: 100%; }
+      .Competitions__Container__List__Item {
+        margin: 0 10px; }
+        .Competitions__Container__List__Item .Button {
+          color: #fff;
+          font-weight: 700;
+          text-transform: uppercase; }
+
 .Standings {
   flex: 1;
   padding: 20px; }

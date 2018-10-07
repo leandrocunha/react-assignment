@@ -39,7 +39,7 @@ class MainNav extends Component {
                     <div className="MainNav__Container__Form">
                         <input
                             className="MainNav__Container__Form__Input"
-                            onBlur={() => this.setState({ search: false })}
+                            onBlur={() => setTimeout(() => this.setState({ search: false }), 300)}
                             onFocus={() => this.setState({ search: true })}
                             onKeyUp={this.onType}
                             placeholder="Searh an area..."
@@ -49,7 +49,13 @@ class MainNav extends Component {
                             <ul className="MainNav__Container__Form__Results">
                                 {result.map(a => (
                                     <li className="MainNav__Container__Form__Results__Item" key={a.countryCode}>
-                                        <button className="Button" onClick={() => this.getCompetitions(a.id)}>
+                                        <button
+                                            className="Button"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                this.getCompetitions(a.id);
+                                            }}
+                                        >
                                             {a.name}
                                         </button>
                                     </li>
