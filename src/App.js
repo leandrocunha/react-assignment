@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Competitions from './Competitions';
-import Sidebar from './Sidebar';
+import Header from './Header';
+import MainNav from './MainNav';
 import Standings from './Standings';
 
 class App extends Component {
@@ -13,8 +14,9 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App" style={{ display: 'flex' }}>
-                <Sidebar {...this.props} />
+            <div className="App">
+                <Header />
+                <MainNav {...this.props} />
                 <Competitions />
                 <Standings />
             </div>

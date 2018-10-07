@@ -303,30 +303,70 @@ body {
   font-size: 14px;
   font-weight: 400; }
 
-.Sidebar {
+.App {
+  display: flex;
+  flex-direction: column; }
+
+.Header {
   background-color: #a00b61;
+  text-align: center; }
+  .Header__Brand {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase; }
+
+.MainNav {
+  background-color: #fe3a10;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   overflow: hidden;
-  padding: 10px;
-  width: 265px; }
-  .Sidebar--competitions {
+  padding: 10px; }
+  .MainNav__Container {
+    align-items: flex-end;
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px; }
+    .MainNav__Container__Form {
+      margin-right: 20px; }
+      .MainNav__Container__Form__Input {
+        border: none;
+        border-radius: 80px;
+        display: block;
+        width: 95%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 10px 20px; }
+    .MainNav__Container__Results {
+      display: none; }
+    .MainNav__Container__QuickLinks {
+      display: flex;
+      flex-direction: column; }
+      .MainNav__Container__QuickLinks__Title {
+        margin: 0; }
+      .MainNav__Container__QuickLinks__List {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        .MainNav__Container__QuickLinks__List .Button {
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+          padding: 5px 8px;
+          text-align: left;
+          transition: all 0.3s ease;
+          width: 100%; }
+          .MainNav__Container__QuickLinks__List .Button:hover {
+            background-color: rgba(0, 0, 0, 0.05); }
+  .MainNav--competitions {
     background-color: #ff922d; }
-  .Sidebar__Search {
-    border: none;
-    border-radius: 80px;
-    display: block;
-    width: 95%;
-    box-sizing: border-box;
-    margin: 30px auto;
-    padding: 10px 20px; }
-  .Sidebar__List {
+  .MainNav__List {
     list-style: none;
     margin: 0;
     overflow-y: scroll;
     padding: 0; }
-    .Sidebar__List__Item .Button {
+    .MainNav__List__Item .Button {
       background-color: transparent;
       border: none;
       color: #fff;
@@ -335,7 +375,7 @@ body {
       text-align: left;
       transition: all 0.3s ease;
       width: 100%; }
-      .Sidebar__List__Item .Button:hover {
+      .MainNav__List__Item .Button:hover {
         background-color: rgba(0, 0, 0, 0.05); }
 
 .Standings {

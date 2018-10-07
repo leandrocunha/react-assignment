@@ -8,5 +8,7 @@ body {
   font-weight: 400;
 }
 
-@import 'sidebar';
+@import 'app';
+@import 'header';
+@import 'mainnav';
 @import 'standings';
