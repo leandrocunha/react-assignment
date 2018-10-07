@@ -29,13 +29,25 @@
         border-radius: 6px;
         box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.2),
           0 2px 8px 4px rgba(60, 64, 67, 0.1);
-        height: 200px;
-        list-style: none;
         margin: 5px 0 0 0;
+        max-height: 200px;
         overflow: hidden;
-        overflow-y: scroll;
-        padding: 10px;
+        padding: 10px 10px 10px 20px;
         position: absolute;
+        width: 250px;
+
+        &__List {
+          max-height: 200px;
+          list-style: none;
+          margin: 0;
+          overflow: hidden;
+          overflow-y: scroll;
+          padding: 0;
+
+          &__Item {
+            padding: 5px 0;
+          }
+        }
       }
     }
 

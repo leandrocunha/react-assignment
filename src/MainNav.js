@@ -46,21 +46,26 @@ class MainNav extends Component {
                             type="text"
                         />
                         {search && (
-                            <ul className="MainNav__Container__Form__Results">
-                                {result.map(a => (
-                                    <li className="MainNav__Container__Form__Results__Item" key={a.countryCode}>
-                                        <button
-                                            className="Button"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                this.getCompetitions(a.id);
-                                            }}
+                            <div className="MainNav__Container__Form__Results">
+                                <ul className="MainNav__Container__Form__Results__List">
+                                    {result.map(a => (
+                                        <li
+                                            className="MainNav__Container__Form__Results__List__Item"
+                                            key={a.countryCode}
                                         >
-                                            {a.name}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
+                                            <button
+                                                className="Button"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    this.getCompetitions(a.id);
+                                                }}
+                                            >
+                                                {a.name}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         )}
                     </div>
                     <div className="MainNav__Container__QuickLinks">
