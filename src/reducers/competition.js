@@ -1,3 +1,5 @@
+import groupBy from './../utils';
+
 const intialstate = { list: [], loading: false, matches: [], standings: [] };
 
 const competition = (state = intialstate, { data, type }) => {
@@ -6,7 +8,7 @@ const competition = (state = intialstate, { data, type }) => {
             return { ...state, loading: false, list: data.competitions };
 
         case 'COMPETITION/MATCHES':
-            return { ...state, matches: data.matches };
+            return { ...state, matches: groupBy(data.matches) };
 
         case 'COMPETITION/STANDINGS':
             return { ...state, standings: data.standings[0].table };
