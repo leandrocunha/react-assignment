@@ -61,46 +61,46 @@ class MainNav extends Component {
                         <p className="MainNav__Container__QuickLinks__Title">Quick search:</p>
                         <ul className="MainNav__Container__QuickLinks__List">
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button">2000</button>
+                                <button className="Button Button--link">2000</button>
                             </li>
-                            <li className="MainNaV__Container__QuickLinks__List__Item">
-                                <button className="Button">2001</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2001</button>
                             </li>
-                            <li>
-                                <button className="Button">2002</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2002</button>
                             </li>
-                            <li>
-                                <button className="Button">2003</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2003</button>
                             </li>
-                            <li>
-                                <button className="Button">2013</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2013</button>
                             </li>
-                            <li>
-                                <button className="Button">2014</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2014</button>
                             </li>
-                            <li>
-                                <button className="Button">2015</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2015</button>
                             </li>
-                            <li>
-                                <button className="Button">2016</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2016</button>
                             </li>
-                            <li>
-                                <button className="Button">2017</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2017</button>
                             </li>
-                            <li>
-                                <button className="Button">2017</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2017</button>
                             </li>
-                            <li>
-                                <button className="Button">2017</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2017</button>
                             </li>
-                            <li>
-                                <button className="Button">2018</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2018</button>
                             </li>
-                            <li>
-                                <button className="Button">2019</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2019</button>
                             </li>
-                            <li>
-                                <button className="Button">2021</button>
+                            <li className="MainNav__Container__QuickLinks__List__Item">
+                                <button className="Button Button--link">2021</button>
                             </li>
                         </ul>
                     </div>

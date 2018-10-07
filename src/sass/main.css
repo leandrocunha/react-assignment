@@ -322,7 +322,7 @@ body {
   overflow: hidden;
   padding: 10px; }
   .MainNav__Container {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     margin: 0 auto;
     max-width: 960px; }
@@ -351,12 +351,18 @@ body {
       display: flex;
       flex-direction: column; }
       .MainNav__Container__QuickLinks__Title {
-        margin: 0; }
+        color: #fff;
+        font-weight: 700;
+        margin: 0 0 10px 0; }
       .MainNav__Container__QuickLinks__List {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0; }
+        .MainNav__Container__QuickLinks__List__Item {
+          margin: 0 10px 0 0; }
+          .MainNav__Container__QuickLinks__List__Item .Button {
+            color: #fff; }
 
 .Standings {
   flex: 1;
@@ -381,3 +387,12 @@ body {
         text-align: center; }
         .Standings__Table tbody tr td:first-of-type {
           text-align: left; }
+
+.Button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0; }
+  .Button--link:hover {
+    text-decoration: underline; }
