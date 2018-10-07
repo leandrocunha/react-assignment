@@ -1,0 +1,10 @@
+.Header {
+  background-color: $jazzberry_jam;
+  text-align: center;
+
+  &__Brand {
+    color: $white;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
