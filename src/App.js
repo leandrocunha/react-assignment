@@ -18,7 +18,9 @@ class App extends Component {
                 <Header />
                 <MainNav {...this.props} />
                 <Competitions />
-                <Standings />
+                <div className="MainContent">
+                    <Standings />
+                </div>
             </div>
         );
     }

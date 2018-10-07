@@ -3,6 +3,7 @@
 @import 'normalize';
 
 body {
+  background-color: rgba($black, 0.04);
   font-family: $Arvo;
   font-size: 14px;
   font-weight: 400;
@@ -12,5 +13,6 @@ body {
 @import 'header';
 @import 'mainnav';
 @import 'competitions';
+@import 'maincontent';
 @import 'standings';
 @import 'button';

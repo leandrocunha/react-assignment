@@ -299,6 +299,7 @@ template {
   display: none; }
 
 body {
+  background-color: rgba(0, 0, 0, 0.04);
   font-family: "Arvo", serif;
   font-size: 14px;
   font-weight: 400; }
@@ -386,12 +387,19 @@ body {
           font-weight: 700;
           text-transform: uppercase; }
 
-.Standings {
-  flex: 1;
+.MainContent {
   padding: 20px; }
+
+.Standings {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+  flex: 1;
+  padding: 16px 20px 12px; }
   .Standings__Table {
     border-collapse: collapse;
-    font-size: 14px; }
+    font-size: 14px;
+    width: 100%; }
     .Standings__Table thead tr th {
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       border-top: 1px solid rgba(0, 0, 0, 0.1);
