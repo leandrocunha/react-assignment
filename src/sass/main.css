@@ -388,6 +388,7 @@ body {
           text-transform: uppercase; }
 
 .MainContent {
+  display: flex;
   padding: 20px; }
 
 .Standings {
@@ -417,6 +418,14 @@ body {
         text-align: center; }
         .Standings__Table tbody tr td:first-of-type {
           text-align: left; }
+
+.Matches {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+  margin: 0 0 0 20px;
+  padding: 16px 20px 12px;
+  width: 30%; }
 
 .Button {
   background-color: transparent;

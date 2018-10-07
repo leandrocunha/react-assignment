@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Competitions from './Competitions';
 import Header from './Header';
 import MainNav from './MainNav';
+import Matches from './Matches';
 import Standings from './Standings';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                 <Competitions />
                 <div className="MainContent">
                     <Standings />
+                    <Matches />
                 </div>
             </div>
         );
