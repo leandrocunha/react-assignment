@@ -86,46 +86,44 @@ class MainNav extends Component {
                         <p className="MainNav__Container__QuickLinks__Title">Quick search:</p>
                         <ul className="MainNav__Container__QuickLinks__List">
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2000</button>
+                                <button
+                                    className="Button Button--link"
+                                    onClick={e => this.getCompetitions(2163, 'Netherlands', e)}
+                                >
+                                    Netherlands
+                                </button>
                             </li>
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2001</button>
+                                <button
+                                    className="Button Button--link"
+                                    onClick={e => this.getCompetitions(2032, 'Brazil', e)}
+                                >
+                                    Brazil
+                                </button>
                             </li>
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2002</button>
+                                <button
+                                    className="Button Button--link"
+                                    onClick={e => this.getCompetitions(2114, 'Italy', e)}
+                                >
+                                    Italy
+                                </button>
                             </li>
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2003</button>
+                                <button
+                                    className="Button Button--link"
+                                    onClick={e => this.getCompetitions(2088, 'Germany', e)}
+                                >
+                                    Germany
+                                </button>
                             </li>
                             <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2013</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2014</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2015</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2016</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2017</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2017</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2017</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2018</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2019</button>
-                            </li>
-                            <li className="MainNav__Container__QuickLinks__List__Item">
-                                <button className="Button Button--link">2021</button>
+                                <button
+                                    className="Button Button--link"
+                                    onClick={e => this.getCompetitions(2224, 'Spain', e)}
+                                >
+                                    Spain
+                                </button>
                             </li>
                         </ul>
                     </div>
