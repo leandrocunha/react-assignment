@@ -385,6 +385,7 @@ body {
 .Competitions__Container {
   align-items: center;
   display: flex;
+  justify-content: center;
   margin: 0 auto;
   max-width: 960px; }
   .Competitions__Container__List {

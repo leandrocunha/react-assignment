@@ -8,7 +8,7 @@ const intialstate = {
 const competition = (state = intialstate, { data, type }) => {
     switch (type) {
         case 'COMPETITION/GET':
-            return { ...state, loading: true };
+            return { ...intialstate, loading: true };
 
         case 'COMPETITION/GETSTANDINGS_AND_MATCHES':
             return {
@@ -18,10 +18,10 @@ const competition = (state = intialstate, { data, type }) => {
             };
 
         case 'COMPETITION/COMPETITIONS':
-            return { ...state, loading: false, list: data.competitions };
+            return { ...intialstate, loading: false, list: data.competitions, count: data.count };
 
         case 'COMPETITION/MATCHES':
-            return { ...state, matches: { loading: true, list: groupBy(data.matches) } };
+            return { ...state, matches: { loading: false, list: groupBy(data.matches) } };
 
         case 'COMPETITION/STANDINGS':
             return {

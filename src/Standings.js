@@ -16,7 +16,7 @@ const Standings = ({ competition }) => (
         {competition.standings &&
             !competition.standings.loading && (
                 <div className="Standings">
-                    {competition.standings.length ? (
+                    {competition.standings.list.length ? (
                         <table className="Standings__Table">
                             <thead>
                                 <tr>
