@@ -561,3 +561,7 @@ body {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+.Empty {
+  padding: 50px;
+  text-align: center; }

@@ -24,7 +24,10 @@ const competition = (state = intialstate, { data, type }) => {
             return { ...state, matches: { loading: true, list: groupBy(data.matches) } };
 
         case 'COMPETITION/STANDINGS':
-            return { ...state, standings: { loading: false, list: data.standings[0].table } };
+            return {
+                ...state,
+                standings: { loading: false, list: data.standings ? data.standings[0].table : [] },
+            };
 
         default:
             return intialstate;
