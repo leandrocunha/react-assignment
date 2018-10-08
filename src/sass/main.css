@@ -428,7 +428,7 @@ body {
     .Standings__Table tbody tr td {
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       font-size: 12px;
-      padding: 15px; }
+      padding: 20px 10px; }
       .Standings__Table tbody tr td:first-of-type {
         text-align: left; }
 
