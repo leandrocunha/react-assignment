@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Arvo:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -300,7 +300,8 @@ template {
 
 body {
   background-color: rgba(0, 0, 0, 0.04);
-  font-family: "Arvo", serif;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400; }
 
@@ -313,7 +314,7 @@ body {
   flex-direction: column; }
 
 .Header {
-  background-color: #a00b61;
+  background-color: #008a12;
   text-align: center; }
   .Header__Brand {
     color: #fff;
@@ -321,11 +322,12 @@ body {
     text-transform: uppercase; }
 
 .MainNav {
-  background-color: #fe3a10;
+  background-color: #fff;
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 10px; }
+  padding: 15px 0; }
   .MainNav__Container {
     align-items: center;
     display: flex;
@@ -334,6 +336,7 @@ body {
     .MainNav__Container__Form {
       margin-right: 20px; }
       .MainNav__Container__Form__Input {
+        background-color: rgba(0, 0, 0, 0.1);
         border: none;
         border-radius: 80px;
         display: block;
@@ -364,9 +367,11 @@ body {
       display: flex;
       flex-direction: column; }
       .MainNav__Container__QuickLinks__Title {
-        color: #fff;
-        font-weight: 700;
-        margin: 0 0 10px 0; }
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 11px;
+        font-weight: 300;
+        margin: 0 0 5px 0;
+        text-transform: uppercase; }
       .MainNav__Container__QuickLinks__List {
         display: flex;
         list-style: none;
@@ -375,29 +380,27 @@ body {
         .MainNav__Container__QuickLinks__List__Item {
           margin: 0 10px 0 0; }
           .MainNav__Container__QuickLinks__List__Item .Button {
-            color: #fff; }
+            color: #008a12; }
 
-.Competitions {
-  background-color: #ff922d; }
-  .Competitions__Container {
+.Competitions__Container {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 960px; }
+  .Competitions__Container__List {
     align-items: center;
     display: flex;
-    margin: 0 auto;
-    max-width: 960px; }
-    .Competitions__Container__List {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding: 15px 0;
-      width: 100%; }
-      .Competitions__Container__List__Item {
-        margin: 0 10px; }
-        .Competitions__Container__List__Item .Button {
-          color: #fff;
-          font-weight: 700;
-          text-transform: uppercase; }
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%; }
+    .Competitions__Container__List__Item {
+      margin: 0 20px; }
+      .Competitions__Container__List__Item .Button {
+        color: #008a12;
+        font-weight: 700;
+        text-transform: uppercase; }
 
 .MainContent {
   display: flex;
