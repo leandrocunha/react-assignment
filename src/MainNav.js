@@ -9,7 +9,10 @@ class MainNav extends Component {
     constructor(props) {
         super(props);
         this.state = { search: false };
+        this.input = React.createRef();
+        this.blur = this.blur.bind(this);
         this.getCompetitions = this.getCompetitions.bind(this);
+        this.onFocus = this.onFocus.bind(this);
         this.onType = this.onType.bind(this);
     }
 
@@ -18,19 +21,32 @@ class MainNav extends Component {
         api.areas().then(res => dispatch(actionAreas.get(res)));
     }
 
+    onFocus() {
+        this.setState({ search: true, selectedArea: 'Type an area...' });
+    }
+
     onType(e) {
         const { dispatch } = this.props;
         dispatch(actionAreas.search(e.target.value));
     }
 
-    getCompetitions(areaId) {
+    getCompetitions(areaId, areaName, e) {
+        e.stopPropagation();
+
         const { dispatch } = this.props;
+
+        this.input.current.value = null;
+        this.setState({ selectedArea: areaName });
         api.competitions(areaId).then(res => dispatch(actionCompetitions.get(res)));
+    }
+
+    blur() {
+        setTimeout(() => this.setState({ search: false }), 150);
     }
 
     render() {
         const { area } = this.props;
-        const { search } = this.state;
+        const { search, selectedArea } = this.state;
         const result = area.searcheable.length ? area.searcheable : area.list;
 
         return (
@@ -39,10 +55,11 @@ class MainNav extends Component {
                     <div className="MainNav__Container__Form">
                         <input
                             className="MainNav__Container__Form__Input"
-                            onBlur={() => setTimeout(() => this.setState({ search: false }), 300)}
-                            onFocus={() => this.setState({ search: true })}
+                            onBlur={this.blur}
+                            onFocus={this.onFocus}
                             onKeyUp={this.onType}
-                            placeholder="Searh an area..."
+                            placeholder={selectedArea || 'Type an area...'}
+                            ref={this.input}
                             type="text"
                         />
                         {search && (
@@ -55,10 +72,7 @@ class MainNav extends Component {
                                         >
                                             <button
                                                 className="Button"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    this.getCompetitions(a.id);
-                                                }}
+                                                onClick={e => this.getCompetitions(a.id, a.name, e)}
                                             >
                                                 {a.name}
                                             </button>

@@ -298,6 +298,9 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  outline: none; }
+
 body {
   background-color: rgba(0, 0, 0, 0.04);
   color: rgba(0, 0, 0, 0.8);
