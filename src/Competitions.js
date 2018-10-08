@@ -12,6 +12,7 @@ class Competitions extends Component {
 
     standings(competitionId) {
         const { dispatch } = this.props;
+        dispatch(actionCompetitions.getStandingsAndMatches());
         api.standings(competitionId).then(res => dispatch(actionCompetitions.standings(res)));
         api.matches(competitionId).then(res => dispatch(actionCompetitions.matches(res)));
     }

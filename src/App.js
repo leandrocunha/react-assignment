@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Competitions from './Competitions';
 import Header from './Header';
@@ -14,26 +13,19 @@ class App extends Component {
     }
 
     render() {
-        const { competition } = this.props;
-
         return (
             <div className="App">
                 <Header />
                 <MainNav {...this.props} />
                 <Competitions />
                 <div className="MainContent">
-                    {competition.standings.length > 0 && <Standings />}
-                    {competition.matches.length > 0 && <Matches />}
+                    <Standings />
+                    <Matches />
                 </div>
             </div>
         );
     }
 }
-
-App.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    competition: PropTypes.instanceOf(Array).isRequired,
-};
 
 const mapStateToProps = state => state;
 
