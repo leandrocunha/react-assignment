@@ -37,7 +37,9 @@ class MainNav extends Component {
 
         this.input.current.value = null;
         this.setState({ selectedArea: areaName });
-        api.competitions(areaId).then(res => dispatch(actionCompetitions.get(res)));
+
+        dispatch(actionCompetitions.get());
+        api.competitions(areaId).then(res => dispatch(actionCompetitions.competitions(res)));
     }
 
     blur() {

@@ -57,6 +57,12 @@
     bottom: 0;
     right: 0;
   }
+
+  &--gray {
+    &:after {
+      background: #f5f5f5;
+    }
+  }
 }
 
 @-webkit-keyframes load3 {

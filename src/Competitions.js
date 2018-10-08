@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as api from './connections';
 import * as actionCompetitions from './actions/competitions';
+import Loader from './Loader';
 
 class Competitions extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Competitions extends Component {
             <div className="Competitions">
                 <div className="Competitions__Container">
                     {competition.loading ? (
-                        <p>loading...</p>
+                        <Loader theme="gray" />
                     ) : (
                         <ul className="Competitions__Container__List">
                             {competition.list.map(c => (
