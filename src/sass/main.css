@@ -308,10 +308,6 @@ body {
   font-size: 14px;
   font-weight: 400; }
 
-.slick-next:before,
-.slick-prev:before {
-  color: #000; }
-
 .App {
   display: flex;
   flex-direction: column; }
@@ -439,10 +435,63 @@ body {
 .Matches {
   background-color: #fff;
   border-radius: 3px;
+  border-top: #008a12 5px solid;
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
   margin: 0 0 0 20px;
-  padding: 16px 20px 12px;
+  padding: 3px 20px 12px;
   width: 430px; }
+  .Matches__Title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase; }
+  .Matches__Round__Title {
+    border-bottom: rgba(0, 0, 0, 0.2) 1px solid;
+    border-top: rgba(0, 0, 0, 0.1) 1px solid;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 0;
+    text-align: center;
+    text-transform: uppercase; }
+  .Matches__Round__List {
+    margin: 0;
+    padding: 0; }
+    .Matches__Round__List__Item {
+      border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px; }
+      .Matches__Round__List__Item__Date {
+        font-size: 11px;
+        font-weight: 700;
+        text-align: center; }
+      .Matches__Round__List__Item__Match {
+        display: flex;
+        justify-content: space-around; }
+        .Matches__Round__List__Item__Match__Home, .Matches__Round__List__Item__Match__Away {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 45%; }
+          .Matches__Round__List__Item__Match__Home__Score, .Matches__Round__List__Item__Match__Away__Score {
+            font-size: 30px;
+            font-weight: 700; }
+        .Matches__Round__List__Item__Match__Home {
+          text-align: left; }
+        .Matches__Round__List__Item__Match__Versus {
+          text-align: center;
+          width: 10%; }
+        .Matches__Round__List__Item__Match__Away {
+          text-align: right; }
+  .Matches .slick-next:before,
+  .Matches .slick-prev:before {
+    color: #008a12; }
+  .Matches .slick-arrow {
+    top: 32px; }
+  .Matches .slick-prev {
+    left: 10px; }
+  .Matches .slick-next {
+    right: 10px; }
 
 .Button {
   background-color: transparent;

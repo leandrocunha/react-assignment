@@ -14,11 +14,6 @@ body {
   font-weight: 400;
 }
 
-.slick-next:before,
-.slick-prev:before {
-  color: $black;
-}
-
 @import 'app';
 @import 'header';
 @import 'mainnav';
