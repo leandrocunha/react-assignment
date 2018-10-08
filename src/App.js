@@ -14,14 +14,16 @@ class App extends Component {
     }
 
     render() {
+        const { competition } = this.props;
+
         return (
             <div className="App">
                 <Header />
                 <MainNav {...this.props} />
                 <Competitions />
                 <div className="MainContent">
-                    <Standings />
-                    <Matches />
+                    {competition.standings.length > 0 && <Standings />}
+                    {competition.matches.length > 0 && <Matches />}
                 </div>
             </div>
         );
@@ -30,6 +32,7 @@ class App extends Component {
 
 App.propTypes = {
     dispatch: PropTypes.func.isRequired,
+    competition: PropTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = state => state;
