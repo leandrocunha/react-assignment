@@ -17,3 +17,8 @@ export const standings = (competitionId) => {
     const url = `http://localhost:3000/api/competitions/${competitionId}/standings`;
     return fetch(url).then(response => response.json());
 };
+
+export const team = (teamId) => {
+    const url = `http://localhost:3000/api/teams/${teamId}`;
+    return fetch(url).then(response => response.json());
+};

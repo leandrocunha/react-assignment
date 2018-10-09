@@ -2,6 +2,10 @@
 @import 'colors';
 @import 'normalize';
 
+// Media Queries
+$desktop: 1024px;
+$tablet: 720px;
+
 * {
   outline: none;
 }
@@ -24,3 +28,5 @@ body {
 @import 'button';
 @import 'loader';
 @import 'empty';
+@import 'modal';
+@import 'modalcontent';

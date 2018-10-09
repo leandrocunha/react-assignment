@@ -36,6 +36,10 @@
           &:first-of-type {
             text-align: left;
           }
+
+          .Button {
+            color: $primary;
+          }
         }
       }
     }

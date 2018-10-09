@@ -30,7 +30,7 @@ const competition = (state = intialstate, { data, type }) => {
             };
 
         default:
-            return intialstate;
+            return state;
     }
 };
 

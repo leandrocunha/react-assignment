@@ -1,0 +1,127 @@
+.ModalContent {
+  width: 100%;
+
+  &__Header {
+    align-items: center;
+    background-image: url('../images/SoccerCover.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: rgba($black, 0.1);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-sizing: border-box;
+    display: flex;
+    overflow: hidden;
+    padding: 25px 30px;
+    position: relative;
+
+    &:after {
+      background-color: rgba($black, 0.3);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &__Brand {
+      height: 130px;
+      margin: 0 30px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__Name {
+      color: $white;
+      font-size: 45px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__Body {
+    max-height: 300px;
+    overflow: hidden;
+    padding: 20px 25px;
+
+    &__Tabs {
+      list-style: none;
+      margin: 0 0 10px 0;
+      padding: 0;
+
+      &__Item {
+        border-bottom: $white 2px solid;
+        display: inline-block;
+        margin: 0 15px 0 0;
+
+        .Button {
+          color: rgba($black, 0.5);
+          font-weight: 700;
+          padding: 10px 20px;
+        }
+
+        &:hover {
+          .Button {
+            color: rgba($black, 0.8);
+            text-decoration: none;
+          }
+        }
+
+        &--active {
+          border-bottom: $primary 2px solid;
+          color: rgba($black, 0.8);
+
+          .Button {
+            color: rgba($black, 0.8);
+          }
+        }
+      }
+    }
+
+    &__PanelWrapper {
+      height: 230px;
+      overflow: hidden;
+      overflow-y: scroll;
+      position: relative;
+
+      &__Panel {
+        background-color: $white;
+        box-sizing: border-box;
+        display: none;
+        left: 0;
+        padding: 15px 10px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        &--activate {
+          display: block;
+        }
+      }
+    }
+
+    &__PlayersList {
+      margin: 0 0 30px 0;
+
+      &__Title {
+        color: rgba($black, 0.5);
+        font-size: 11px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      &__Item {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 0 15px 0 0;
+        padding: 3px 0;
+      }
+    }
+  }
+}

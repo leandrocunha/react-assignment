@@ -34,6 +34,11 @@ app.get('/api/competitions/:competitionId/standings', (req, res) => {
         .catch(err => res.json({ ...err.data }));
 });
 
+app.get('/api/teams/:teamId', (req, res) => {
+    const { params } = req;
+    api.get(`/teams/${params.teamId}`).then(r => res.json({ ...r.data }));
+});
+
 app.get('*', (req, res) => {
     res.send('Hello World!');
 });
