@@ -6,7 +6,7 @@ import area from './reducers/area';
 import competition from './reducers/competition';
 import modal from './reducers/modal';
 import registerServiceWorker from './registerServiceWorker';
-import App from './App';
+import App from './components/App';
 import './sass/main.css';
 
 const store = createStore(

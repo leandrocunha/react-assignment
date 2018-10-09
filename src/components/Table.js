@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as actionModal from './actions/modal';
+import * as actionModal from './../actions/modal';
 
 class Table extends Component {
     constructor(props) {

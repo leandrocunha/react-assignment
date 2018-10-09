@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Loader from './Loader';
 import Empty from './Empty';
 import Table from './Table';
-import * as actionModal from './actions/modal';
+import * as actionModal from './../actions/modal';
 
 class Standings extends Component {
     constructor(props) {

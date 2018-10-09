@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as api from './connections';
-import * as actionModal from './actions/modal';
+import * as api from './../connections';
+import * as actionModal from './../actions/modal';
 import Loader from './Loader';
 import ModalContent from './ModalContent';
 

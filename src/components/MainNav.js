@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as actionAreas from './actions/areas';
-import * as actionCompetitions from './actions/competitions';
-import * as api from './connections';
+import * as actionAreas from './../actions/areas';
+import * as actionCompetitions from './../actions/competitions';
+import * as api from './../connections';
 
 class MainNav extends Component {
     constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as api from './connections';
-import * as actionCompetitions from './actions/competitions';
+import * as api from './../connections';
+import * as actionCompetitions from './../actions/competitions';
 import Empty from './Empty';
 import Loader from './Loader';
 
