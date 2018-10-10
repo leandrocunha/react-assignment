@@ -18,10 +18,18 @@
       &__Item {
         margin: 0 20px;
 
+        @media screen and (max-width: $tablet) {
+          margin: 0 8px;
+        }
+
         .Button {
           color: $primary;
           font-weight: 700;
           text-transform: uppercase;
+
+          @media screen and (max-width: $tablet) {
+            font-size: 12px;
+          }
         }
       }
     }

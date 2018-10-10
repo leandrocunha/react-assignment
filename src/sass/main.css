@@ -332,9 +332,17 @@ body {
     display: flex;
     margin: 0 auto;
     max-width: 960px; }
+    @media screen and (max-width: 720px) {
+      .MainNav__Container {
+        flex-direction: column;
+        width: 90%; } }
     .MainNav__Container__Form {
       margin-right: 20px;
       width: 550px; }
+      @media screen and (max-width: 720px) {
+        .MainNav__Container__Form {
+          margin: 0;
+          width: 90%; } }
       .MainNav__Container__Form__Input {
         background-color: rgba(0, 0, 0, 0.1);
         border: none;
@@ -344,6 +352,9 @@ body {
         box-sizing: border-box;
         margin: 0;
         padding: 10px 20px; }
+        @media screen and (max-width: 720px) {
+          .MainNav__Container__Form__Input {
+            width: 100%; } }
       .MainNav__Container__Form__Results {
         background-color: #fff;
         border-radius: 6px;
@@ -372,13 +383,22 @@ body {
         font-weight: 300;
         margin: 0 0 5px 0;
         text-transform: uppercase; }
+        @media screen and (max-width: 720px) {
+          .MainNav__Container__QuickLinks__Title {
+            display: none; } }
       .MainNav__Container__QuickLinks__List {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0; }
+        @media screen and (max-width: 720px) {
+          .MainNav__Container__QuickLinks__List {
+            font-size: 11px;
+            margin-top: 10px; } }
         .MainNav__Container__QuickLinks__List__Item {
           margin: 0 20px 0 0; }
+          .MainNav__Container__QuickLinks__List__Item:last-of-type {
+            margin-right: 0; }
           .MainNav__Container__QuickLinks__List__Item .Button {
             color: #008a12; }
 
@@ -398,21 +418,34 @@ body {
     width: 100%; }
     .Competitions__Container__List__Item {
       margin: 0 20px; }
+      @media screen and (max-width: 720px) {
+        .Competitions__Container__List__Item {
+          margin: 0 8px; } }
       .Competitions__Container__List__Item .Button {
         color: #008a12;
         font-weight: 700;
         text-transform: uppercase; }
+        @media screen and (max-width: 720px) {
+          .Competitions__Container__List__Item .Button {
+            font-size: 12px; } }
 
 .MainContent {
   align-items: flex-start;
   display: flex;
   padding: 20px; }
+  @media screen and (max-width: 720px) {
+    .MainContent {
+      flex-direction: column; } }
 
 .Standings {
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
-  flex: 1; }
+  flex: 1;
+  min-height: 300px; }
+  @media screen and (max-width: 720px) {
+    .Standings {
+      width: 100%; } }
   .Standings__Table {
     border-collapse: collapse;
     font-size: 14px;
@@ -442,8 +475,16 @@ body {
   border-top: #008a12 5px solid;
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
   margin: 0 0 0 20px;
+  min-height: 280px;
   padding: 3px 20px 12px;
   width: 430px; }
+  @media screen and (max-width: 960px) {
+    .Matches {
+      width: 30%; } }
+  @media screen and (max-width: 720px) {
+    .Matches {
+      margin: 30px 0 0 0;
+      width: auto; } }
   .Matches__Title {
     font-size: 12px;
     font-weight: 700;
