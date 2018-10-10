@@ -5,6 +5,9 @@ import Slider from 'react-slick';
 import { connect } from 'react-redux';
 import Loader from './Loader';
 
+/**
+ * Basic Slider configurations.
+ */
 const settings = {
     arrows: true,
     infinite: true,

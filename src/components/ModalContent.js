@@ -7,10 +7,25 @@ import { filter } from './../utils';
 class ModalContent extends Component {
     constructor(props) {
         super(props);
+
+        /** Set state with default values.
+         * @param {string} tab
+         * @example
+         * { tab: 'players' }
+         */
         this.state = { tab: 'players' };
+
+        /** Bind activate function to toggle tabs and panels. */
         this.activate = this.activate.bind(this);
     }
 
+    /**
+     * @function activate Set what tab must be activated to display the correct tab an panel.
+     * @param {string} tab
+     * @example activate('players') {
+     *      //do something
+     *  }
+     */
     activate(tab) {
         this.setState({ tab });
     }

@@ -9,9 +9,19 @@ import * as actionModal from './../actions/modal';
 class Standings extends Component {
     constructor(props) {
         super(props);
+
+        /** Bind showModal function to open modal. */
         this.showModal = this.showModal.bind(this);
     }
 
+    /**
+     * @function showModal Open modal with the ID of the selected team
+     * and dispatch action to after request API,
+     * @param {number} teamId
+     * @example showModal(1879) {
+     *      //do something
+     *  }
+     */
     showModal(teamId) {
         const { dispatch } = this.props;
         dispatch(actionModal.show(teamId));

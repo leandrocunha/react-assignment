@@ -9,6 +9,12 @@ import ModalContent from './ModalContent';
 class Modal extends Component {
     constructor(props) {
         super(props);
+
+        /** Set state with default values.
+         * @param {bool} loading
+         * @example
+         * { loading: false }
+         */
         this.state = { loading: true };
 
         /** Bind close() function to close Modal */
@@ -17,6 +23,12 @@ class Modal extends Component {
 
     componentDidMount() {
         const { dispatch, modal } = this.props;
+
+        /**
+         * @function api.team Fetch selected team from API,
+         * dispatch a action to save results on app state
+         * and set local state to hide loader.
+         */
         api.team(modal.teamId).then((res) => {
             dispatch(actionModal.success(res));
             this.setState({ loading: false });
@@ -24,7 +36,7 @@ class Modal extends Component {
     }
 
     /**
-     * The close() function have a responsability to dispacth action
+     * @function close This function ave a responsability to dispacth action
      * and set in Redux the Modal's close state.
      */
     close() {

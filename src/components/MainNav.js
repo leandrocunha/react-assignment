@@ -8,28 +8,71 @@ import * as api from './../connections';
 class MainNav extends Component {
     constructor(props) {
         super(props);
+
+        /** Set state with default values.
+         * @param {bool} search
+         * @example
+         * { search: false }
+         */
         this.state = { search: false };
+
+        /** Create ref at input search. */
         this.input = React.createRef();
+
+        /** Bind blur function hide popover resutls. */
         this.blur = this.blur.bind(this);
+
+        /** Bind getCompetitions function to fetch competitions from api. */
         this.getCompetitions = this.getCompetitions.bind(this);
+
+        /** Bind onFocus function to show search results. */
         this.onFocus = this.onFocus.bind(this);
+
+        /** Bind onType function to search areas. */
         this.onType = this.onType.bind(this);
     }
 
     componentDidMount() {
         const { dispatch } = this.props;
+
+        /**
+         * @function api.areas Call API on init to fetch available areas
+         * and then dispatch a action to save at app state.
+         */
         api.areas().then(res => dispatch(actionAreas.get(res)));
     }
 
+    /**
+     * @function onFocus Set local state and show dropdown with available areas.
+     */
     onFocus() {
         this.setState({ search: true, selectedArea: 'Type an area...' });
     }
 
+    /**
+     * @function onType Type string and dispatch a action to search
+     * the correspondence in available areas list.
+     * @param {HTMLelement} e
+     * @example onType(e){
+     *      //do something
+     *  }
+     */
     onType(e) {
         const { dispatch } = this.props;
         dispatch(actionAreas.search(e.target.value));
     }
 
+    /**
+     * @function getCompetitions Fetch API to get competitions of the selected area,
+     * save the name of selected area in local state, start competition loader
+     * and then save results and app state.
+     * @param {number} areaId The id of selected area.
+     * @param {string} areaName The name fo selected area.
+     * @param {HTMLelement} e The HTML element of input search.
+     * @returns getCompetitions(2063, 'Netherlands', element) {
+     *      //do somenthing
+     *  }
+     */
     getCompetitions(areaId, areaName, e) {
         e.stopPropagation();
 
@@ -42,6 +85,10 @@ class MainNav extends Component {
         api.competitions(areaId).then(res => dispatch(actionCompetitions.competitions(res)));
     }
 
+    /**
+     * @function blur Hide dropdown results when input search is blur
+     * setting search variable on local state.
+     */
     blur() {
         setTimeout(() => this.setState({ search: false }), 150);
     }

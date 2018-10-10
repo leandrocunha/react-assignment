@@ -1,3 +1,10 @@
+/**
+ * @function groupBy Reorder array grouping results by matchday.
+ * @param {Array} arr
+ * @example groupBy([{...}]) {
+ *      //do something
+ *  }
+ */
 const groupBy = (arr) => {
     const grouped = [];
 
@@ -8,6 +15,11 @@ const groupBy = (arr) => {
     return grouped;
 };
 
+/**
+ * @function search Search a string inside a array.
+ * @param {string} str A string to be searched
+ * @param {Array} arr A list of searcheables results.
+ */
 const search = (str, arr) => {
     const newArr = [];
 
@@ -20,6 +32,14 @@ const search = (str, arr) => {
     return newArr;
 };
 
+/**
+ * @function filter Function to get player of specific position.
+ * @param {Array} arr
+ * @param {string} position
+ * @example filter([...], 'Goalkeeper') {
+ *      //do something
+ *  }
+ */
 const filter = (arr, position) => arr.filter(player => player.position === position);
 
 export { filter, groupBy, search };

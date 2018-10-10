@@ -9,9 +9,19 @@ import Loader from './Loader';
 class Competitions extends Component {
     constructor(props) {
         super(props);
+
+        /** Bind standingsAndMatches function to get stangings and matches. */
         this.standingsAndMatches = this.standingsAndMatches.bind(this);
     }
 
+    /**
+     * @function standingsAndMatches Dispatch an action to start loader and
+     *  then fetch standings and matches from a competition.
+     * @param {number} competitionId
+     * @example standingsAndMatches(2031){
+     *      //do something
+     *  }
+     */
     standingsAndMatches(competitionId) {
         const { dispatch } = this.props;
         dispatch(actionCompetitions.getStandingsAndMatches());
