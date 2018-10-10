@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Competitions from './Competitions';
@@ -8,28 +8,18 @@ import Matches from './Matches';
 import Standings from './Standings';
 import Modal from './Modal';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    render() {
-        const { competition, modal } = this.props;
-        return (
-            <div className="App">
-                <Header />
-                <MainNav {...this.props} />
-                <Competitions />
-                <div className="MainContent">
-                    <Standings />
-                    {competition.matches && <Matches />}
-                </div>
-                {modal.open && <Modal />}
-            </div>
-        );
-    }
-}
+const App = ({ competition, modal }) => (
+    <div className="App">
+        <Header />
+        <MainNav {...this.props} />
+        <Competitions />
+        <div className="MainContent">
+            <Standings />
+            {competition.matches && <Matches />}
+        </div>
+        {modal.open && <Modal />}
+    </div>
+);
 
 const mapStateToProps = state => state;
 
