@@ -28,3 +28,47 @@ Create an application that:
 - UI is accessible by keyboard
 - Code is documented
 - Items in the grid show up to four items per row and gracefully degrade to a vertical list on narrow screens
+
+## How to run
+
+- After clone the repo you need install depencies
+
+```
+$ npm install
+```
+
+- Now we need keep the API running:
+
+```
+$ node index
+```
+
+- Open other terminal window and run the command belowm maybe you will receive a warning of creat-react-app to user another port like 3001. Accept it:
+
+```
+npm start
+```
+
+## Tests
+
+- To run the test
+
+```
+$ npm run test
+```
+
+- To coverage
+
+```
+$ npm run test:coverage
+```
+
+## My considerations
+
+In general I liked a lot to do it, was a great challenge. I had some difficults to test the fetch API URL and because this, I could not 100% converage.
+
+I didn't have to much time to work in mobile version, then in the small screen, the standings table and slide card, can be show some weird behaviors :(
+
+I know that one the requirements was no use some app state library, but I decided use because I think I did a application sufficient complex to use it, instead a local state approach.
+
+Thank so much
