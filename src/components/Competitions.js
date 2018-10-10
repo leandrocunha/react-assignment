@@ -9,10 +9,10 @@ import Loader from './Loader';
 class Competitions extends Component {
     constructor(props) {
         super(props);
-        this.standings = this.standings.bind(this);
+        this.standingsAndMatches = this.standingsAndMatches.bind(this);
     }
 
-    standings(competitionId) {
+    standingsAndMatches(competitionId) {
         const { dispatch } = this.props;
         dispatch(actionCompetitions.getStandingsAndMatches());
         api.standings(competitionId).then(res => dispatch(actionCompetitions.standings(res)));
@@ -31,7 +31,10 @@ class Competitions extends Component {
                             <ul className="Competitions__Container__List">
                                 {competition.list.map(c => (
                                     <li className="Competitions__Container__List__Item" key={c.id}>
-                                        <button className="Button Button--link" onClick={() => this.standings(c.id)}>
+                                        <button
+                                            className="Button Button--link"
+                                            onClick={() => this.standingsAndMatches(c.id)}
+                                        >
                                             {c.name}
                                         </button>
                                     </li>

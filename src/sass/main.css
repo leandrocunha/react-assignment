@@ -696,7 +696,7 @@ body {
         position: absolute;
         top: 0;
         width: 100%; }
-        .ModalContent__Body__PanelWrapper__Panel--activate {
+        .ModalContent__Body__PanelWrapper__Panel--active {
           display: block; }
     .ModalContent__Body__PlayersList {
       margin: 0 0 30px 0; }

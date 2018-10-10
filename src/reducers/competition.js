@@ -1,4 +1,4 @@
-import groupBy from './../utils';
+import { groupBy } from './../utils';
 
 const intialstate = {
     list: [],
@@ -13,8 +13,8 @@ const competition = (state = intialstate, { data, type }) => {
         case 'COMPETITION/GETSTANDINGS_AND_MATCHES':
             return {
                 ...state,
-                matches: { ...state.matches, loading: true },
-                standings: { ...state.standings, loading: true },
+                matches: { list: [], loading: true },
+                standings: { list: [], loading: true },
             };
 
         case 'COMPETITION/COMPETITIONS':

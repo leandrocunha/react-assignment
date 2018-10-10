@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as api from './../connections';
@@ -35,16 +35,14 @@ class Modal extends Component {
     render() {
         const { loading } = this.state;
         return (
-            <Fragment>
-                <section className="Modal">
-                    <div className="Modal__Content">
-                        {loading ? <Loader /> : <ModalContent />}
-                        <button className="Modal__Content__Close" onClick={this.close} type="button">
-                            x
-                        </button>
-                    </div>
-                </section>
-            </Fragment>
+            <section className="Modal">
+                <div className="Modal__Content">
+                    {loading ? <Loader /> : <ModalContent />}
+                    <button className="Modal__Content__Close" onClick={this.close} type="button">
+                        x
+                    </button>
+                </div>
+            </section>
         );
     }
 }

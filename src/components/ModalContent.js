@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { filter } from './../utils';
 
 class ModalContent extends Component {
     constructor(props) {
@@ -55,12 +56,12 @@ class ModalContent extends Component {
                         <div
                             className={classnames(
                                 'ModalContent__Body__PanelWrapper__Panel',
-                                tab === 'players' && 'ModalContent__Body__PanelWrapper__Panel--activate',
+                                tab === 'players' && 'ModalContent__Body__PanelWrapper__Panel--active',
                             )}
                         >
                             <dl className="ModalContent__Body__PlayersList">
                                 <dt className="ModalContent__Body__PlayersList__Title">Goalkeepers</dt>
-                                {modal.content.squad.filter(player => player.position === 'Goalkeeper').map(player => (
+                                {filter(modal.content.squad, 'Goalkeeper').map(player => (
                                     <dd className="ModalContent__Body__PlayersList__Item" key={player.id}>
                                         {player.name}
                                     </dd>
@@ -68,7 +69,7 @@ class ModalContent extends Component {
                             </dl>
                             <dl className="ModalContent__Body__PlayersList">
                                 <dt className="ModalContent__Body__PlayersList__Title">Defenders</dt>
-                                {modal.content.squad.filter(player => player.position === 'Defender').map(player => (
+                                {filter(modal.content.squad, 'Defender').map(player => (
                                     <dd className="ModalContent__Body__PlayersList__Item" key={player.id}>
                                         {player.name}
                                     </dd>
@@ -76,7 +77,7 @@ class ModalContent extends Component {
                             </dl>
                             <dl className="ModalContent__Body__PlayersList">
                                 <dt className="ModalContent__Body__PlayersList__Title">Midfielders</dt>
-                                {modal.content.squad.filter(player => player.position === 'Midfielder').map(player => (
+                                {filter(modal.content.squad, 'Midfielder').map(player => (
                                     <dd className="ModalContent__Body__PlayersList__Item" key={player.id}>
                                         {player.name}
                                     </dd>
@@ -84,7 +85,7 @@ class ModalContent extends Component {
                             </dl>
                             <dl className="ModalContent__Body__PlayersList">
                                 <dt className="ModalContent__Body__PlayersList__Title">Attackers</dt>
-                                {modal.content.squad.filter(player => player.position === 'Attacker').map(player => (
+                                {filter(modal.content.squad, 'Attacker').map(player => (
                                     <dd className="ModalContent__Body__PlayersList__Item" key={player.id}>
                                         {player.name}
                                     </dd>
@@ -94,7 +95,7 @@ class ModalContent extends Component {
                         <div
                             className={classnames(
                                 'ModalContent__Body__PanelWrapper__Panel',
-                                tab === 'informations' && 'ModalContent__Body__PanelWrapper__Panel--activate',
+                                tab === 'informations' && 'ModalContent__Body__PanelWrapper__Panel--active',
                             )}
                         >
                             <p>

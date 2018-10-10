@@ -1,16 +1,6 @@
+import { search } from './../utils';
+
 const intialstate = { list: [], loading: true, searcheable: [] };
-
-const search = (str, arr) => {
-    const newArr = [];
-
-    arr.forEach((a) => {
-        if (a.name.toLowerCase().includes(str.toLowerCase())) {
-            newArr.push(a);
-        }
-    });
-
-    return newArr;
-};
 
 const area = (state = intialstate, { data, type }) => {
     switch (type) {

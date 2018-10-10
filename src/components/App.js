@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     render() {
-        const { modal } = this.props;
+        const { competition, modal } = this.props;
         return (
             <div className="App">
                 <Header />
@@ -23,7 +23,7 @@ class App extends Component {
                 <Competitions />
                 <div className="MainContent">
                     <Standings />
-                    <Matches />
+                    {competition.matches && <Matches />}
                 </div>
                 {modal.open && <Modal />}
             </div>
@@ -34,6 +34,7 @@ class App extends Component {
 const mapStateToProps = state => state;
 
 App.propTypes = {
+    competition: PropTypes.instanceOf(Object).isRequired,
     modal: PropTypes.instanceOf(Object).isRequired,
 };
 

@@ -15,50 +15,46 @@ const settings = {
 
 const Matches = props => (
     <Fragment>
-        {props.competition.matches &&
-            props.competition.matches.loading && (
-                <div className="Matches">
-                    <Loader />
-                </div>
-            )}
-
-        {props.competition.matches &&
-            !props.competition.matches.loading && (
-                <div className="Matches">
-                    <p className="Matches__Title">Matches</p>
-                    <Slider {...settings}>
-                        {props.competition.matches.list.map((round, index) => (
-                            <div className="Matches__Round" key={round[0].id}>
-                                <p className="Matches__Round__Title">{`Round ${index + 1}`}</p>
-                                <ul className="Matches__Round__List">
-                                    {round.map(match => (
-                                        <li className="Matches__Round__List__Item" key={match.id}>
-                                            <p className="Matches__Round__List__Item__Date">
-                                                {moment(match.utcDate).format('MM-DD-YYYY')}
+        {props.competition.matches.loading ? (
+            <div className="Matches">
+                <Loader />
+            </div>
+        ) : (
+            <div className="Matches">
+                <p className="Matches__Title">Matches</p>
+                <Slider {...settings}>
+                    {props.competition.matches.list.map((round, index) => (
+                        <div className="Matches__Round" key={round[0].id}>
+                            <p className="Matches__Round__Title">{`Round ${index + 1}`}</p>
+                            <ul className="Matches__Round__List">
+                                {round.map(match => (
+                                    <li className="Matches__Round__List__Item" key={match.id}>
+                                        <p className="Matches__Round__List__Item__Date">
+                                            {moment(match.utcDate).format('MM-DD-YYYY')}
+                                        </p>
+                                        <div className="Matches__Round__List__Item__Match">
+                                            <p className="Matches__Round__List__Item__Match__Home">
+                                                <span className="Matches__Round__List__Item__Match__Home__Score">
+                                                    {match.score.fullTime.homeTeam}
+                                                </span>
+                                                {match.homeTeam.name}
                                             </p>
-                                            <div className="Matches__Round__List__Item__Match">
-                                                <p className="Matches__Round__List__Item__Match__Home">
-                                                    <span className="Matches__Round__List__Item__Match__Home__Score">
-                                                        {match.score.fullTime.homeTeam}
-                                                    </span>
-                                                    {match.homeTeam.name}
-                                                </p>
-                                                <p className="Matches__Round__List__Item__Match__Versus">x</p>
-                                                <p className="Matches__Round__List__Item__Match__Away">
-                                                    <span className="Matches__Round__List__Item__Match__Away__Score">
-                                                        {match.score.fullTime.awayTeam}
-                                                    </span>
-                                                    {match.awayTeam.name}
-                                                </p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
-            )}
+                                            <p className="Matches__Round__List__Item__Match__Versus">x</p>
+                                            <p className="Matches__Round__List__Item__Match__Away">
+                                                <span className="Matches__Round__List__Item__Match__Away__Score">
+                                                    {match.score.fullTime.awayTeam}
+                                                </span>
+                                                {match.awayTeam.name}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
+        )}
     </Fragment>
 );
 
